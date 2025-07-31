@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>আমার অ্যাপ</title>
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#2d89ef">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to bottom right, #e3f2fd, #bbdefb);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+    h1 {
+      color: #0d47a1;
+      margin-bottom: 20px;
+    }
+    button {
+      border: 2px solid #0d47a1;
+      background: white;
+      color: #0d47a1;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #0d47a1;
+      color: white;
+    }
+    footer {
+      position: absolute;
+      bottom: 10px;
+      font-size: 12px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <h1>স্বাগতম আমার অ্যাপে!</h1>
+  <button onclick="alert('আপনার চাপ ধরা হয়েছে!')">চাপ দিন</button>
+  <footer>© ২০২৫ আমার অ্যাপ</footer>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(reg => console.log('✅ Service Worker Registered'))
+        .catch(err => console.error('❌ SW Error:', err));
+    }
+  </script>
+</body>
+</html>
